@@ -92,11 +92,11 @@ async def get_news(user_storage, user_id: int):
 
 
 async def get_subject_for_json():
-    # await asyncio.sleep(100_000)
+    await asyncio.sleep(100_000)
     async with aiohttp.ClientSession(headers=headers) as session:
         async with session.get(f'{url}/ru/hubs/') as action:
 
-            with open('/publisher-bot/scraps/hubs.html', 'w', encoding='utf-8') as file:
+            with open('../publisher-bot/scraps/hubs.html', 'w', encoding='utf-8') as file:
                 file.write(await action.text())
 
             soup = BeautifulSoup(await action.text(), 'lxml')
@@ -107,20 +107,20 @@ async def get_subject_for_json():
                 [hub.get('href').rstrip('/').split('/')[-1] for hub in subject_name if hub.get('href').rstrip('/').split('/')[-1] not in ['feed', 'articles', 'all']])
             SUBJECTS_NAME['subjects'] = list(subject_keys_values)
 
-            with open('/publisher-bot/scraps/all_subjects.json', 'w', encoding='utf-8') as file:
+            with open('../publisher-bot/scraps/all_subjects.json', 'w', encoding='utf-8') as file:
                 json.dump(SUBJECTS_NAME, file, indent=4, ensure_ascii=False)
 
 
 async def get_hubs_for_json():
     await asyncio.sleep(100_000)
     last_page = 0
-    with open('/publisher-bot/scraps/all_subjects.json', 'r', encoding='utf-8') as file:
+    with open('../publisher-bot/scraps/all_subjects.json', 'r', encoding='utf-8') as file:
         value_json = json.load(file)
 
     hubs = [hubs_data[1] for hubs_data in value_json.get('subjects')]
 
     for hub in hubs:
-        with open('/publisher-bot/scraps/hubs.html', encoding='utf-8') as file_for_page:
+        with open('../publisher-bot/scraps/hubs.html', encoding='utf-8') as file_for_page:
             source = file_for_page.read()
 
         soup = BeautifulSoup(source, 'lxml')
@@ -151,5 +151,5 @@ async def get_hubs_for_json():
                 list_zip = zip(hub_name_list, hub_url_list)
                 HUBS_NAME[hub] = list(list_zip)
 
-    with open('/publisher-bot/scraps/all_hubs.json', 'w', encoding='utf-8') as file:
+    with open('../publisher-bot/scraps/all_hubs.json', 'w', encoding='utf-8') as file:
         json.dump(HUBS_NAME, file, indent=4, ensure_ascii=False)
