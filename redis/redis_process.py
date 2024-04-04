@@ -15,7 +15,7 @@ async def connect_to_redis():
 
 async def set_data(user_id: int, user_dict: dict[str, Any]) -> Any:
     redis = await connect_to_redis()
-    if await redis.hset(user_id, user_dict):
+    if await redis.hset(user_id, mapping=user_dict):
         return True
     else:
         return False
