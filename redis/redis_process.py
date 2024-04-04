@@ -17,7 +17,7 @@ async def connect_to_redis():
 
 async def set_data(user_id: int, user_dict: dict[str, Any]) -> Any:
     redis = await connect_to_redis()
-    data_dump = json.dumps(user_dict)
+    data_dump = pickle.dumps(user_dict)
     print(user_dict)
 
     if await redis.set(user_id, data_dump):
@@ -30,5 +30,5 @@ async def get_data(user_id: int) -> Any:
     redis = await connect_to_redis()
 
     result = await redis.get(user_id)
-    result_load = json.loads(result)
+    result_load = pickle.loads(result)
     return result_load

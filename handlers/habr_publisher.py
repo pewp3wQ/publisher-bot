@@ -94,6 +94,8 @@ async def hub_selected(dialog_manager: DialogManager, event_from_user: User, **k
 
     # user_dict[dialog_manager.event.from_user.id] = hub_dict
     hub_dict['view_user_news'] = []
+
+    print(hub_dict)
     await redis_process.set_data(event_from_user.id, hub_dict)
 
     # return selected subjects and hubs displayed in Russian
