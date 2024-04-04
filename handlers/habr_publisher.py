@@ -31,7 +31,7 @@ async def check_new_news(dialog_manger: DialogManager, bot: Bot, event_from_user
 
             news_read_keyboard = InlineKeyboardMarkup(inline_keyboard=[[InlineKeyboardButton(text='Читать', callback_data='read_news', url=news[0])]])
             user_data[news[3]]['last_check_in'] = datetime.datetime.utcnow()
-            # user_dict[event_from_user.id][news[3]]['last_check_in'] = datetime.datetime.utcnow()
+            user_dict[event_from_user.id][news[3]]['last_check_in'] = datetime.datetime.utcnow()
 
             text = f'Другие хабы: {", ".join([f"{other_hub}" for other_hub in news[2]])}\n\n{news[1]}\n\n{" ".join(news[4])}'
 
@@ -88,12 +88,14 @@ async def hub_selected(dialog_manager: DialogManager, event_from_user: User, **k
     hubs = dialog_manager.dialog_data.get('hubs_selection')
     hub_dict = {}
 
+
     for hub in hubs:
         time_dict = {'last_check_in': datetime.datetime.utcnow()}
         hub_dict[hub] = time_dict
 
+    print(f'{hub_dict}')
     user_dict[dialog_manager.event.from_user.id] = hub_dict
-
+    print(f'again -- {hub_dict}')
     await redis_process.set_data(event_from_user.id, hub_dict)
 
     # return selected subjects and hubs displayed in Russian

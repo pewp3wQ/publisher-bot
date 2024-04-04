@@ -43,7 +43,7 @@ async def command_start_process(message: Message, dialog_manager: DialogManager)
 
 
 if __name__ == '__main__':
-    logging.basicConfig(level=logging.DEBUG, stream=sys.stdout)
+    logging.basicConfig(level=logging.INFO, stream=sys.stdout)
     dp.include_routers(start_dialog, habr_publisher.rt, habr_publisher.habr_dialog, dtf_publisher.dtf_dialog)
     setup_dialogs(dp)
     dp.run_polling(bot)

@@ -1,5 +1,6 @@
 from typing import Any
 from aioredis import Redis
+import pickle
 
 from config import load_config
 
@@ -9,13 +10,13 @@ redis_port = cfg.redis_data.port
 
 
 async def connect_to_redis():
-    redis = await Redis.from_url(f"redis://{redis_url}:{redis_port}", db=1, encoding="utf-8", decode_responses=True)
+    redis = await Redis(host=f"redis://{redis_url}:{redis_port}", db=1, decode_responses=True)
     return redis
 
 
 async def set_data(user_id: int, user_dict: dict[str, Any]) -> Any:
     redis = await connect_to_redis()
-    if await redis.hset(user_id, mapping=user_dict):
+    if await redis.set(user_id, pickle.dumps(user_dict)):
         return True
     else:
         return False
@@ -23,6 +24,6 @@ async def set_data(user_id: int, user_dict: dict[str, Any]) -> Any:
 
 async def get_data(user_id: int) -> hash:
     redis = await connect_to_redis()
-    result = await redis.hgetall(user_id)
+    result = await redis.get(pickle.loads(user_id))
 
     return result
