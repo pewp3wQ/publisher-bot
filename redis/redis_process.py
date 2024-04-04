@@ -24,7 +24,7 @@ async def set_data(user_id: int, user_dict: dict[str, Any]) -> Any:
         return False
 
 
-async def get_data(user_id: int) -> hash:
+async def get_data(user_id: int) -> Any:
     redis = await connect_to_redis()
 
     result = await redis.get(user_id)
