@@ -33,5 +33,5 @@ async def get_data(user_id: int) -> Any:
     result = await redis.get(user_id)
     print(f'РЕЗУЛЬТАТ ПОЛУЧЕНИЯ ГЕТ{result}')
 
-    result_load = pickle.loads(result)
-    return result_load
+    # result_load = pickle.loads(result)
+    return result
