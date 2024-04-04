@@ -1,9 +1,13 @@
 from bs4 import BeautifulSoup
 import datetime
-
 import json
 import asyncio
 import aiohttp
+
+from config import load_config
+
+config = load_config('.env')
+cookie = config.cookie.cookie
 
 SUBJECTS_NAME = {}
 HUBS_NAME = {}
@@ -16,6 +20,7 @@ headers = {
     'Connection': 'keep-alive',
     'DNT': '1',
     'Pragma': 'no-cache',
+    'Cookie': cookie,
     'Sec-Fetch-Dest': 'empty',
     'Sec-Fetch-Mode': 'cors',
     'Sec-Fetch-Site': 'same-origin',
@@ -28,7 +33,7 @@ headers = {
 
 
 def subjects_for_menu():
-    with open('D://new-folder/publisher_bot/scraps/all_subjects.json', 'r', encoding='utf-8') as file:
+    with open('/new-folder/publisher_bot/scraps/all_subjects.json', 'r', encoding='utf-8') as file:
         source = json.load(file)
 
     return source.get('subjects')
@@ -37,7 +42,7 @@ def subjects_for_menu():
 def hubs_for_menu(subject_list: list):
     subject_for_hub = []
 
-    with open('D://new-folder/publisher_bot/scraps/all_hubs.json', 'r', encoding='utf-8') as file:
+    with open('/new-folder/publisher_bot/scraps/all_hubs.json', 'r', encoding='utf-8') as file:
         source = json.load(file)
 
     for hub in subject_list:
@@ -47,7 +52,7 @@ def hubs_for_menu(subject_list: list):
 
 
 def subsite_for_menu():
-    with open('D://new-folder/publisher_bot/scraps/all_subsite.json', encoding='utf-8') as file:
+    with open('/new-folder/publisher_bot/scraps/all_subsite.json', encoding='utf-8') as file:
         source = json.load(file)
 
     return source.get('subsites')
@@ -91,7 +96,7 @@ async def get_subject_for_json():
     async with aiohttp.ClientSession(headers=headers) as session:
         async with session.get(f'{url}/ru/hubs/') as action:
 
-            with open('D://new-folder/publisher_bot/scraps/hubs.html', 'w', encoding='utf-8') as file:
+            with open('/new-folder/publisher_bot/scraps/hubs.html', 'w', encoding='utf-8') as file:
                 file.write(await action.text())
 
             soup = BeautifulSoup(await action.text(), 'lxml')
@@ -102,20 +107,20 @@ async def get_subject_for_json():
                 [hub.get('href').rstrip('/').split('/')[-1] for hub in subject_name if hub.get('href').rstrip('/').split('/')[-1] not in ['feed', 'articles', 'all']])
             SUBJECTS_NAME['subjects'] = list(subject_keys_values)
 
-            with open('D://new-folder/publisher_bot/scraps/all_subjects.json', 'w', encoding='utf-8') as file:
+            with open('/new-folder/publisher_bot/scraps/all_subjects.json', 'w', encoding='utf-8') as file:
                 json.dump(SUBJECTS_NAME, file, indent=4, ensure_ascii=False)
 
 
 async def get_hubs_for_json():
-    # await asyncio.sleep(100_000)
+    await asyncio.sleep(100_000)
     last_page = 0
-    with open('D://new-folder/publisher_bot/scraps/all_subjects.json', 'r', encoding='utf-8') as file:
+    with open('/new-folder/publisher_bot/scraps/all_subjects.json', 'r', encoding='utf-8') as file:
         value_json = json.load(file)
 
     hubs = [hubs_data[1] for hubs_data in value_json.get('subjects')]
 
     for hub in hubs:
-        with open('D://new-folder/publisher_bot/scraps/hubs.html', encoding='utf-8') as file_for_page:
+        with open('/new-folder/publisher_bot/scraps/hubs.html', encoding='utf-8') as file_for_page:
             source = file_for_page.read()
 
         soup = BeautifulSoup(source, 'lxml')
@@ -146,5 +151,5 @@ async def get_hubs_for_json():
                 list_zip = zip(hub_name_list, hub_url_list)
                 HUBS_NAME[hub] = list(list_zip)
 
-    with open('D://new-folder/publisher_bot/scraps/all_hubs.json', 'w', encoding='utf-8') as file:
+    with open('/new-folder/publisher_bot/scraps/all_hubs.json', 'w', encoding='utf-8') as file:
         json.dump(HUBS_NAME, file, indent=4, ensure_ascii=False)

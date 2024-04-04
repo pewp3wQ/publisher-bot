@@ -24,10 +24,16 @@ class RedisData:
 
 
 @dataclass
+class cookie:
+    cookie: str
+
+
+@dataclass
 class Config:
     tg_bot: TgBot
     webhook_data: WebHookData
     redis_data: RedisData
+    cookie: cookie
 
 
 def load_config(path: str | None = None) -> Config:
@@ -47,5 +53,8 @@ def load_config(path: str | None = None) -> Config:
         redis_data=RedisData(
             url=env('REDIS_URL'),
             port=env('REDIS_PORT')
+        ),
+        cookie=cookie(
+            cookie=env('COOKIE')
         )
     )
