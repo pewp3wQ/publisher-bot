@@ -34,4 +34,4 @@ async def get_data(user_id: int) -> Any:
     print(f'РЕЗУЛЬТАТ ПОЛУЧЕНИЯ ГЕТ{result}')
 
     result_load = pickle.loads(result)
-    return result
+    return result_load
