@@ -62,7 +62,7 @@ async def get_news(user_storage, user_id: int):
     print(f'USER STORAGE: {user_storage}')
     new_news_list = []
 
-    hubs_keys_name = user_storage[user_id].keys()
+    hubs_keys_name = user_storage.keys()
 
     for key in hubs_keys_name:
         async with aiohttp.ClientSession(headers=headers) as session:
