@@ -1,0 +1,1750 @@
+{
+    "develop": [
+        [
+            "Информационная безопасность",
+            "infosecurity"
+        ],
+        [
+            "Программирование",
+            "programming"
+        ],
+        [
+            "Производство и разработка электроники",
+            "electronics"
+        ],
+        [
+            "Машинное обучение",
+            "machine_learning"
+        ],
+        [
+            "Python",
+            "python"
+        ],
+        [
+            "Разработка игр",
+            "gamedev"
+        ],
+        [
+            "Веб-разработка",
+            "webdev"
+        ],
+        [
+            "Open source",
+            "open_source"
+        ],
+        [
+            "Разработка под Android",
+            "android_dev"
+        ],
+        [
+            "Схемотехника",
+            "circuit-design"
+        ],
+        [
+            "Математика",
+            "maths"
+        ],
+        [
+            "Мессенджеры",
+            "instant_messaging"
+        ],
+        [
+            "C++",
+            "cpp"
+        ],
+        [
+            "Алгоритмы",
+            "algorithms"
+        ],
+        [
+            "JavaScript",
+            "javascript"
+        ],
+        [
+            "Программирование микроконтроллеров",
+            "controllers"
+        ],
+        [
+            "Тестирование IT-систем",
+            "it_testing"
+        ],
+        [
+            "Разработка мобильных приложений",
+            "mobile_dev"
+        ],
+        [
+            ".NET",
+            "net"
+        ],
+        [
+            "Java",
+            "java"
+        ],
+        [
+            "Анализ и проектирование систем",
+            "analysis_design"
+        ],
+        [
+            "Реверс-инжиниринг",
+            "reverse-engineering"
+        ],
+        [
+            "PHP",
+            "php"
+        ],
+        [
+            "C#",
+            "csharp"
+        ],
+        [
+            "Kubernetes",
+            "kubernetes"
+        ],
+        [
+            "Высокая производительность",
+            "hi"
+        ],
+        [
+            "Go",
+            "go"
+        ],
+        [
+            "Проектирование и рефакторинг",
+            "refactoring"
+        ],
+        [
+            "Rust",
+            "rust"
+        ],
+        [
+            "Тестирование веб-сервисов",
+            "web_testing"
+        ],
+        [
+            "API",
+            "api"
+        ],
+        [
+            "Разработка систем связи",
+            "netdev"
+        ],
+        [
+            "PostgreSQL",
+            "postgresql"
+        ],
+        [
+            "C",
+            "c"
+        ],
+        [
+            "Ненормальное программирование",
+            "crazydev"
+        ],
+        [
+            "SQL",
+            "sql"
+        ],
+        [
+            "FPGA",
+            "fpga"
+        ],
+        [
+            "Системное программирование",
+            "system_programming"
+        ],
+        [
+            "Разработка под Linux",
+            "linux_dev"
+        ],
+        [
+            "Обработка изображений",
+            "image_processing"
+        ],
+        [
+            "Разработка под iOS",
+            "ios_dev"
+        ],
+        [
+            "Занимательные задачки",
+            "zadachki"
+        ],
+        [
+            "Профессиональная литература",
+            "lib"
+        ],
+        [
+            "Data Mining",
+            "data_mining"
+        ],
+        [
+            "Big Data",
+            "bigdata"
+        ],
+        [
+            "Браузеры",
+            "browsers"
+        ],
+        [
+            "Визуализация данных",
+            "data_visualization"
+        ],
+        [
+            "Микросервисы",
+            "microservices"
+        ],
+        [
+            "HTML",
+            "html5"
+        ],
+        [
+            "Разработка под Windows",
+            "win_dev"
+        ],
+        [
+            "GitHub",
+            "github"
+        ],
+        [
+            "CSS",
+            "css"
+        ],
+        [
+            "Глобальные системы позиционирования",
+            "geo_systems"
+        ],
+        [
+            "Тестирование мобильных приложений",
+            "mobile_testing"
+        ],
+        [
+            "Криптография",
+            "crypto"
+        ],
+        [
+            "Natural Language Processing",
+            "natural_language_processing"
+        ],
+        [
+            "Symfony",
+            "symfony"
+        ],
+        [
+            "Kotlin",
+            "kotlin"
+        ],
+        [
+            "ReactJS",
+            "reactjs"
+        ],
+        [
+            "TypeScript",
+            "typescript"
+        ],
+        [
+            "Assembler",
+            "assembler"
+        ],
+        [
+            "CAD/CAM",
+            "cad_cam"
+        ],
+        [
+            "Параллельное программирование",
+            "parallel_programming"
+        ],
+        [
+            "IT-стандарты",
+            "itstandarts"
+        ],
+        [
+            "Разработка на Raspberry Pi",
+            "raspberrypi"
+        ],
+        [
+            "Angular",
+            "angular"
+        ],
+        [
+            "Совершенный код",
+            "complete_code"
+        ],
+        [
+            "Git",
+            "git"
+        ],
+        [
+            "Разработка под Arduino",
+            "arduino"
+        ],
+        [
+            "1С",
+            "1C"
+        ],
+        [
+            "Laravel",
+            "laravel"
+        ],
+        [
+            "UEFI",
+            "UEFI"
+        ],
+        [
+            "Node.JS",
+            "nodejs"
+        ],
+        [
+            "Matlab",
+            "matlab"
+        ],
+        [
+            "Системы сборки",
+            "build_automation"
+        ],
+        [
+            "Solidity",
+            "solidity"
+        ],
+        [
+            "Разработка робототехники",
+            "robo_dev"
+        ],
+        [
+            "Кодобред",
+            "code_wtf"
+        ],
+        [
+            "Промышленное программирование",
+            "industrial_control_system"
+        ],
+        [
+            "Открытые данные",
+            "opendata"
+        ],
+        [
+            "Геоинформационные сервисы",
+            "geo"
+        ],
+        [
+            "Разработка под e-commerce",
+            "ecommerce_development"
+        ],
+        [
+            "Системы управления версиями",
+            "cvs"
+        ],
+        [
+            "Тестирование игр",
+            "game_testing"
+        ],
+        [
+            "Хакатоны",
+            "hackathons"
+        ],
+        [
+            "Графические оболочки",
+            "desktop_environment"
+        ],
+        [
+            "Swift",
+            "swift"
+        ],
+        [
+            "SQLite",
+            "sqlite"
+        ],
+        [
+            "ООП",
+            "oop"
+        ],
+        [
+            "Компиляторы",
+            "compilers"
+        ],
+        [
+            "Flutter",
+            "flutter"
+        ],
+        [
+            "Платежные системы",
+            "pay_system"
+        ],
+        [
+            "Разработка для интернета вещей",
+            "iot_dev"
+        ],
+        [
+            "CTF",
+            "ctf"
+        ],
+        [
+            "Ruby",
+            "ruby"
+        ],
+        [
+            "Lua",
+            "lua"
+        ],
+        [
+            "Ruby on Rails",
+            "ror"
+        ],
+        [
+            "Microsoft SQL Server",
+            "mssql"
+        ],
+        [
+            "Разработка под AR и VR",
+            "arvrdev"
+        ],
+        [
+            "Unity",
+            "unity"
+        ],
+        [
+            "Поисковые технологии",
+            "search_technologies"
+        ],
+        [
+            "Jetpack Compose",
+            "jetpack-compose"
+        ],
+        [
+            "XML",
+            "xml"
+        ],
+        [
+            "Отладка",
+            "debug"
+        ],
+        [
+            "SaaS / S+S",
+            "saas"
+        ],
+        [
+            "Bug hunters",
+            "bughunters"
+        ],
+        [
+            "Dart",
+            "dart"
+        ],
+        [
+            "VueJS",
+            "vuejs"
+        ],
+        [
+            "Django",
+            "django"
+        ],
+        [
+            "Верстка писем",
+            "devmail"
+        ],
+        [
+            "Scala",
+            "scala"
+        ],
+        [
+            "Canvas",
+            "canvas"
+        ],
+        [
+            "Разработка под macOS",
+            "osx_dev"
+        ],
+        [
+            "Визуальное программирование",
+            "visual_programming"
+        ],
+        [
+            "Клиентская оптимизация",
+            "client_side_optimization"
+        ],
+        [
+            "Функциональное программирование",
+            "funcprog"
+        ],
+        [
+            "Microsoft Azure",
+            "azure"
+        ],
+        [
+            "R",
+            "r"
+        ],
+        [
+            "Mercurial",
+            "mercurial"
+        ],
+        [
+            "F#",
+            "fsharp"
+        ],
+        [
+            "IPFS",
+            "IPFS"
+        ],
+        [
+            "TDD",
+            "tdd"
+        ],
+        [
+            "Tarantool",
+            "tarantool"
+        ],
+        [
+            "Visual Basic for Applications",
+            "vba"
+        ],
+        [
+            "Visual Studio",
+            "vs"
+        ],
+        [
+            "Gradle",
+            "gradle"
+        ],
+        [
+            "Delphi",
+            "delphi"
+        ],
+        [
+            "Joomla",
+            "joomla"
+        ],
+        [
+            "Atlassian",
+            "Atlassian"
+        ],
+        [
+            "MongoDB",
+            "mongodb"
+        ],
+        [
+            "1С-Битрикс",
+            "bitrix"
+        ],
+        [
+            "Amazon Web Services",
+            "aws"
+        ],
+        [
+            "NoSQL",
+            "nosql"
+        ],
+        [
+            "Расширения для браузеров",
+            "browser_extensions"
+        ],
+        [
+            "Hadoop",
+            "Hadoop"
+        ],
+        [
+            "CMS",
+            "cms"
+        ],
+        [
+            "Google Chrome",
+            "google_chrome"
+        ],
+        [
+            "Brainfuck",
+            "brainfuck"
+        ],
+        [
+            "Unreal Engine",
+            "unreal_engine"
+        ],
+        [
+            "Godot",
+            "godot"
+        ],
+        [
+            "Google API",
+            "google_api"
+        ],
+        [
+            "OpenStreetMap",
+            "openstreetmap"
+        ],
+        [
+            "WebAssembly",
+            "webassembly"
+        ],
+        [
+            "PDF",
+            "pdf"
+        ],
+        [
+            "VIM",
+            "vim"
+        ],
+        [
+            "Oracle",
+            "oracle"
+        ],
+        [
+            "Спортивное программирование",
+            "sport_programming"
+        ],
+        [
+            "Xcode",
+            "xcode"
+        ],
+        [
+            "SCADA",
+            "scada"
+        ],
+        [
+            "Adobe Flash",
+            "flash_platform"
+        ],
+        [
+            "WordPress",
+            "wordpress"
+        ],
+        [
+            "UML Design",
+            "uml"
+        ],
+        [
+            "Разработка для Office 365",
+            "office365dev"
+        ],
+        [
+            "Текстовые редакторы и IDE",
+            "txt_ide"
+        ],
+        [
+            "Microsoft Edge",
+            "edge"
+        ],
+        [
+            "Elixir/Phoenix",
+            "elixirphoenix"
+        ],
+        [
+            "Julia",
+            "julia"
+        ],
+        [
+            "Firebird/Interbase",
+            "firebird"
+        ],
+        [
+            "Eclipse",
+            "eclipse"
+        ],
+        [
+            "Maps API",
+            "map_api"
+        ],
+        [
+            "LabVIEW",
+            "labview"
+        ],
+        [
+            "Семантика",
+            "sw"
+        ],
+        [
+            "Cobol",
+            "cobol"
+        ],
+        [
+            "Doctrine ORM",
+            "doctrine"
+        ],
+        [
+            "Erlang/OTP",
+            "erlang"
+        ],
+        [
+            "jQuery",
+            "jquery"
+        ],
+        [
+            "Яндекс API",
+            "yandex_api"
+        ],
+        [
+            "Openshift",
+            "openshift"
+        ],
+        [
+            "I2P",
+            "i2p"
+        ],
+        [
+            "Firefox",
+            "firefox"
+        ],
+        [
+            "WebGL",
+            "webgl"
+        ],
+        [
+            "Разработка под Tizen",
+            "tizen_dev"
+        ],
+        [
+            "GPGPU",
+            "gpgpu"
+        ],
+        [
+            "Sphinx",
+            "sphinx"
+        ],
+        [
+            "Адвент-календарь 2024",
+            "advent2024"
+        ],
+        [
+            "Nx",
+            "nx"
+        ],
+        [
+            "Zig",
+            "zig"
+        ],
+        [
+            "NestJS",
+            "nestjs"
+        ],
+        [
+            "$mol",
+            "smol"
+        ],
+        [
+            "Ember.js",
+            "emberjs"
+        ],
+        [
+            "SvelteJS",
+            "sveltejs"
+        ],
+        [
+            "TYPO3",
+            "typo3"
+        ],
+        [
+            "Haxe",
+            "haxe"
+        ],
+        [
+            "Flask",
+            "flask"
+        ],
+        [
+            "Processing",
+            "processing_lang"
+        ],
+        [
+            "Google Cloud Vision API",
+            "google_cloud_vision_api"
+        ],
+        [
+            "Xamarin",
+            "Xamarin"
+        ],
+        [
+            "Puppet",
+            "puppet"
+        ],
+        [
+            "Clojure",
+            "clojure"
+        ],
+        [
+            "CoffeeScript",
+            "coffeescript"
+        ],
+        [
+            "Elm",
+            "elm"
+        ],
+        [
+            "Phalcon",
+            "phalcon"
+        ],
+        [
+            "Разработка под Sailfish OS",
+            "Sailfish_dev"
+        ],
+        [
+            "Magento",
+            "magento"
+        ],
+        [
+            "Биллинговые системы",
+            "billing"
+        ],
+        [
+            "Forth",
+            "forth"
+        ],
+        [
+            "Smalltalk",
+            "smalltalk"
+        ],
+        [
+            "Meteor.JS",
+            "meteorjs"
+        ],
+        [
+            "D",
+            "d"
+        ],
+        [
+            "Mesh-сети",
+            "mesh_networking"
+        ],
+        [
+            "Derby.js",
+            "derbyjs"
+        ],
+        [
+            "Emacs",
+            "emacs"
+        ],
+        [
+            "Разработка под Bada",
+            "bada_dev"
+        ],
+        [
+            "Objective C",
+            "objectivec"
+        ],
+        [
+            "Fortran",
+            "fortran"
+        ],
+        [
+            "Cocoa",
+            "cocoa"
+        ],
+        [
+            "Asterisk",
+            "asterisk"
+        ],
+        [
+            "Apache Flex",
+            "flex"
+        ],
+        [
+            "Action Script",
+            "action_script"
+        ],
+        [
+            "IIS",
+            "iis"
+        ],
+        [
+            "Twitter API",
+            "twitter_api"
+        ],
+        [
+            "ВКонтакте API",
+            "vk_api"
+        ],
+        [
+            "Facebook API",
+            "facebook_api"
+        ],
+        [
+            "Microsoft Access",
+            "ms_access"
+        ],
+        [
+            "Разработка под Windows Phone",
+            "wp_dev"
+        ],
+        [
+            "Prolog",
+            "prolog"
+        ],
+        [
+            "GTK+",
+            "gtk"
+        ],
+        [
+            "Cubrid",
+            "cubrid"
+        ],
+        [
+            "Mono и Moonlight",
+            "mono"
+        ],
+        [
+            "Google App Engine",
+            "gae"
+        ],
+        [
+            "Yii",
+            "yii"
+        ],
+        [
+            "Регулярные выражения",
+            "regex"
+        ],
+        [
+            "Twisted",
+            "twisted"
+        ],
+        [
+            "Haskell",
+            "haskell"
+        ],
+        [
+            "XSLT",
+            "xslt"
+        ],
+        [
+            "LaTeX",
+            "latex"
+        ],
+        [
+            "Small Basic",
+            "smallbasic"
+        ],
+        [
+            "Kohana",
+            "kohanaphp"
+        ],
+        [
+            "Разработка под Java ME",
+            "javame_dev"
+        ],
+        [
+            "LiveStreet",
+            "livestreet"
+        ],
+        [
+            "MooTools",
+            "mootools"
+        ],
+        [
+            "GreaseMonkey",
+            "greasemonkey"
+        ],
+        [
+            "INFOLUST",
+            "infolust"
+        ],
+        [
+            "Groovy & Grails",
+            "groovy_grails"
+        ],
+        [
+            "Lisp",
+            "lisp"
+        ],
+        [
+            "Zend Framework",
+            "zend_framework"
+        ],
+        [
+            "Библиотека ExtJS/Sencha",
+            "extjs"
+        ],
+        [
+            "Internet Explorer",
+            "ie"
+        ],
+        [
+            "CodeIgniter",
+            "codeigniter"
+        ],
+        [
+            "Silverlight",
+            "silverlight"
+        ],
+        [
+            "SharePoint",
+            "sharepoint"
+        ],
+        [
+            "Google Web Toolkit",
+            "gwt"
+        ],
+        [
+            "CakePHP",
+            "cakephp"
+        ],
+        [
+            "Safari",
+            "safari"
+        ],
+        [
+            "MODX",
+            "modx"
+        ],
+        [
+            "Drupal",
+            "drupal"
+        ],
+        [
+            "Opera",
+            "opera"
+        ],
+        [
+            "Микроформаты",
+            "microformats"
+        ],
+        [
+            "Ajax",
+            "AJAX"
+        ],
+        [
+            "Perl",
+            "perl"
+        ],
+        [
+            "Google Cloud Platform",
+            "googlecloud"
+        ],
+        [
+            "TensorFlow",
+            "tensorflow"
+        ],
+        [
+            "ASP",
+            "asp"
+        ],
+        [
+            "MySQL",
+            "mysql"
+        ],
+        [
+            "Qt",
+            "qt_software"
+        ]
+    ],
+    "admin": [
+        [
+            "Сетевые технологии",
+            "network_technologies"
+        ],
+        [
+            "Системное администрирование",
+            "sys_admin"
+        ],
+        [
+            "Настройка Linux",
+            "linux"
+        ],
+        [
+            "IT-инфраструктура",
+            "it-infrastructure"
+        ],
+        [
+            "Облачные сервисы",
+            "cloud_services"
+        ],
+        [
+            "DevOps",
+            "devops"
+        ],
+        [
+            "Виртуализация",
+            "virtualization"
+        ],
+        [
+            "Хранение данных",
+            "dwh"
+        ],
+        [
+            "Администрирование баз данных",
+            "db_admins"
+        ],
+        [
+            "Операционные системы",
+            "os"
+        ],
+        [
+            "Инженерные системы",
+            "engineering_systems"
+        ],
+        [
+            "Беспроводные технологии",
+            "wireless"
+        ],
+        [
+            "Серверное администрирование",
+            "s_admin"
+        ],
+        [
+            "Хостинг",
+            "hosting"
+        ],
+        [
+            "*nix",
+            "nix"
+        ],
+        [
+            "Децентрализованные сети",
+            "p2p"
+        ],
+        [
+            "Стандарты связи",
+            "network_standarts"
+        ],
+        [
+            "Распределённые системы",
+            "distributed_systems"
+        ],
+        [
+            "Data Engineering",
+            "data_engineering"
+        ],
+        [
+            "Хранилища данных",
+            "data_warehouse"
+        ],
+        [
+            "Серверная оптимизация",
+            "server_side_optimization"
+        ],
+        [
+            "Оболочки",
+            "shells"
+        ],
+        [
+            "Облачные вычисления",
+            "cloud_computing"
+        ],
+        [
+            "Резервное копирование",
+            "backup"
+        ],
+        [
+            "Спам и антиспам",
+            "spam"
+        ],
+        [
+            "Apache",
+            "apache"
+        ],
+        [
+            "DNS",
+            "dns"
+        ],
+        [
+            "PowerShell",
+            "powershell"
+        ],
+        [
+            "Cisco",
+            "cisconetworks"
+        ],
+        [
+            "Восстановление данных",
+            "data_recovery"
+        ],
+        [
+            "Антивирусная защита",
+            "virus"
+        ],
+        [
+            "Администрирование доменных имен",
+            "domains"
+        ],
+        [
+            "Serverless",
+            "serverless"
+        ],
+        [
+            "IPv6",
+            "ipv6"
+        ],
+        [
+            "Nginx",
+            "nginx"
+        ],
+        [
+            "Сжатие данных",
+            "data_compression"
+        ],
+        [
+            "IPTV",
+            "iptv"
+        ],
+        [
+            "SAN",
+            "san"
+        ],
+        [
+            "Fidonet",
+            "fido"
+        ]
+    ],
+    "design": [
+        [
+            "Интерфейсы",
+            "ui"
+        ],
+        [
+            "Дизайн",
+            "design"
+        ],
+        [
+            "Дизайн игр",
+            "game_design"
+        ],
+        [
+            "Прототипирование",
+            "prototyping"
+        ],
+        [
+            "Работа с 3D-графикой",
+            "3d_graphics"
+        ],
+        [
+            "Веб-дизайн",
+            "web_design"
+        ],
+        [
+            "Usability",
+            "usability"
+        ],
+        [
+            "Графический дизайн",
+            "graph_design"
+        ],
+        [
+            "Дизайн мобильных приложений",
+            "apps_design"
+        ],
+        [
+            "Accessibility",
+            "accessibility"
+        ],
+        [
+            "Работа с видео",
+            "video"
+        ],
+        [
+            "Компьютерная анимация",
+            "animation"
+        ],
+        [
+            "Голосовые интерфейсы",
+            "voice_interfaces"
+        ],
+        [
+            "Работа с векторной графикой",
+            "vector_graphics"
+        ],
+        [
+            "Типографика",
+            "typography"
+        ],
+        [
+            "Работа с иконками",
+            "iconoskaz"
+        ],
+        [
+            "CGI (графика)",
+            "cgi"
+        ]
+    ],
+    "management": [
+        [
+            "Карьера в IT-индустрии",
+            "career"
+        ],
+        [
+            "Читальный зал",
+            "read"
+        ],
+        [
+            "IT-компании",
+            "itcompanies"
+        ],
+        [
+            "Управление персоналом",
+            "hr_management"
+        ],
+        [
+            "Управление разработкой",
+            "dev_management"
+        ],
+        [
+            "Законодательство в IT",
+            "business-laws"
+        ],
+        [
+            "Управление продуктом",
+            "productpm"
+        ],
+        [
+            "Управление проектами",
+            "pm"
+        ],
+        [
+            "Учебный процесс в IT",
+            "study"
+        ],
+        [
+            "Развитие стартапа",
+            "startuprise"
+        ],
+        [
+            "Бизнес-модели",
+            "business_models"
+        ],
+        [
+            "Исследования и прогнозы в IT",
+            "research"
+        ],
+        [
+            "Подготовка технической документации",
+            "technical_writing"
+        ],
+        [
+            "Управление медиа",
+            "media_management"
+        ],
+        [
+            "Удалённая работа",
+            "remote"
+        ],
+        [
+            "Agile",
+            "agile"
+        ],
+        [
+            "GTD",
+            "gtd"
+        ],
+        [
+            "Управление e-commerce",
+            "ecommerce"
+        ],
+        [
+            "Венчурные инвестиции",
+            "venturecap"
+        ],
+        [
+            "Управление продажами",
+            "sales"
+        ],
+        [
+            "Управление сообществом",
+            "community_management"
+        ],
+        [
+            "Патентование",
+            "patents"
+        ],
+        [
+            "Фриланс",
+            "freelance"
+        ],
+        [
+            "IT-эмиграция",
+            "it_immigration"
+        ],
+        [
+            "Терминология IT",
+            "terminator"
+        ],
+        [
+            "CRM-системы",
+            "crm"
+        ],
+        [
+            "Service Desk",
+            "service_desk"
+        ],
+        [
+            "ERP-системы",
+            "erp"
+        ],
+        [
+            "Локализация продуктов",
+            "localization"
+        ],
+        [
+            "ECM/СЭД",
+            "ecm"
+        ],
+        [
+            "Help Desk Software",
+            "helpdesk"
+        ],
+        [
+            "Образование за рубежом",
+            "edu"
+        ],
+        [
+            "Creative Commons",
+            "creative_commons"
+        ]
+    ],
+    "marketing": [
+        [
+            "Контент и копирайтинг",
+            "contentmarketing"
+        ],
+        [
+            "Конференции",
+            "tech_events"
+        ],
+        [
+            "Продвижение игр",
+            "game_promotion"
+        ],
+        [
+            "Habr",
+            "habr"
+        ],
+        [
+            "Монетизация игр",
+            "game_monetization"
+        ],
+        [
+            "Монетизация веб-сервисов",
+            "web_monetization"
+        ],
+        [
+            "Аналитика мобильных приложений",
+            "mobileanalytics"
+        ],
+        [
+            "Интернет-маркетинг",
+            "internetmarketing"
+        ],
+        [
+            "Повышение конверсии",
+            "conversion"
+        ],
+        [
+            "Веб-аналитика",
+            "weban"
+        ],
+        [
+            "Монетизация мобильных приложений",
+            "mobile_monetization"
+        ],
+        [
+            "Контекстная реклама",
+            "context"
+        ],
+        [
+            "Growth Hacking",
+            "growthhacking"
+        ],
+        [
+            "Поисковая оптимизация",
+            "seo"
+        ],
+        [
+            "Брендинг",
+            "branding"
+        ],
+        [
+            "Я пиарюсь",
+            "i_am_advertising"
+        ],
+        [
+            "Email-маркетинг",
+            "emailmarketing"
+        ],
+        [
+            "Медийная реклама",
+            "display_adv"
+        ],
+        [
+            "Монетизация IT-систем",
+            "it_monetization"
+        ]
+    ],
+    "popsci": [
+        [
+            "Научно-популярное",
+            "popular_science"
+        ],
+        [
+            "DIY или Сделай сам",
+            "DIY"
+        ],
+        [
+            "Искусственный интеллект",
+            "artificial_intelligence"
+        ],
+        [
+            "Игры и игровые консоли",
+            "games"
+        ],
+        [
+            "Компьютерное железо",
+            "hardware"
+        ],
+        [
+            "Космонавтика",
+            "space"
+        ],
+        [
+            "Старое железо",
+            "antikvariat"
+        ],
+        [
+            "Электроника для начинающих",
+            "easyelectronics"
+        ],
+        [
+            "История IT",
+            "history"
+        ],
+        [
+            "Гаджеты",
+            "gadgets"
+        ],
+        [
+            "Лайфхаки для гиков",
+            "lifehacks"
+        ],
+        [
+            "Физика",
+            "physics"
+        ],
+        [
+            "Софт",
+            "soft"
+        ],
+        [
+            "Астрономия",
+            "astronomy"
+        ],
+        [
+            "Финансы в IT",
+            "finance"
+        ],
+        [
+            "Звук",
+            "sound"
+        ],
+        [
+            "Будущее здесь",
+            "futurenow"
+        ],
+        [
+            "Смартфоны",
+            "smartphones"
+        ],
+        [
+            "Транспорт",
+            "transport"
+        ],
+        [
+            "Статистика в IT",
+            "statistics"
+        ],
+        [
+            "Здоровье",
+            "health"
+        ],
+        [
+            "Социальные сети и сообщества",
+            "social_networks"
+        ],
+        [
+            "Урбанизм",
+            "urban"
+        ],
+        [
+            "Энергия и элементы питания",
+            "energy"
+        ],
+        [
+            "Сетевое оборудование",
+            "network_hardware"
+        ],
+        [
+            "Видеотехника",
+            "video_tech"
+        ],
+        [
+            "Умный дом",
+            "home_automation"
+        ],
+        [
+            "Изучение языков",
+            "learning_languages"
+        ],
+        [
+            "Процессоры",
+            "cpu"
+        ],
+        [
+            "Мозг",
+            "brain"
+        ],
+        [
+            "Химия",
+            "Chemistry"
+        ],
+        [
+            "AR и VR",
+            "arvr"
+        ],
+        [
+            "Носимая электроника",
+            "wearable_electronics"
+        ],
+        [
+            "Фототехника",
+            "photo"
+        ],
+        [
+            "Настольные компьютеры",
+            "desktops"
+        ],
+        [
+            "Сотовая связь",
+            "cellular"
+        ],
+        [
+            "Робототехника",
+            "robot"
+        ],
+        [
+            "Экология",
+            "Ecology"
+        ],
+        [
+            "Криптовалюты",
+            "cryptocurrency"
+        ],
+        [
+            "Интернет вещей",
+            "internet_of_things"
+        ],
+        [
+            "Биографии гиков",
+            "it_bigraphy"
+        ],
+        [
+            "Накопители",
+            "storages"
+        ],
+        [
+            "Копирайт",
+            "copyright"
+        ],
+        [
+            "Биология",
+            "biology"
+        ],
+        [
+            "Ноутбуки",
+            "notebooks"
+        ],
+        [
+            "Видеоконференцсвязь",
+            "video_conferencing"
+        ],
+        [
+            "Автомобильные гаджеты",
+            "autogadgets"
+        ],
+        [
+            "Периферия",
+            "Peripheral"
+        ],
+        [
+            "Квантовые технологии",
+            "quantum"
+        ],
+        [
+            "Логические игры",
+            "logic_games"
+        ],
+        [
+            "Интервью",
+            "interviews"
+        ],
+        [
+            "Киберпанк",
+            "cyberpunk"
+        ],
+        [
+            "Видеокарты",
+            "videocards"
+        ],
+        [
+            "Научная фантастика",
+            "sci-fi"
+        ],
+        [
+            "3D-принтеры",
+            "3d-printers"
+        ],
+        [
+            "Мониторы и ТВ",
+            "displays"
+        ],
+        [
+            "Офисы IT-компаний",
+            "office"
+        ],
+        [
+            "Инфографика",
+            "infographics"
+        ],
+        [
+            "Биотехнологии",
+            "biotech"
+        ],
+        [
+            "Нанотехнологии",
+            "nano"
+        ],
+        [
+            "Планшеты",
+            "tablets"
+        ],
+        [
+            "Телемедицина",
+            "telemedicine"
+        ],
+        [
+            "Лазеры",
+            "lasers"
+        ],
+        [
+            "Демосцена",
+            "demoscene"
+        ],
+        [
+            "Презентации",
+            "presentation"
+        ],
+        [
+            "Киберспорт",
+            "cybersport"
+        ],
+        [
+            "Мультикоптеры",
+            "multicopters"
+        ],
+        [
+            "Суперкомпьютеры",
+            "supercomputers"
+        ],
+        [
+            "Медгаджеты",
+            "medgadgets"
+        ],
+        [
+            "Краудсорсинг",
+            "crowdsourcing"
+        ],
+        [
+            "Чулан",
+            "closet"
+        ]
+    ]
+}
