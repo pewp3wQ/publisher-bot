@@ -12,7 +12,7 @@ redis_port = cfg.redis_data.port
 
 
 async def connect_to_redis():
-    redis = await Redis.from_url(f"redis://{redis_url}:{redis_port}", db=1, decode_responses=True)
+    redis = await Redis.from_url(f"redis://{redis_url}:{redis_port}", db=1)
     return redis
 
 
