@@ -14,7 +14,6 @@ from redis import redis_process
 rt = Router()
 
 user_dict = {}
-view_user_news = []
 
 async def check_new_news(dialog_manger: DialogManager, bot: Bot, event_from_user: User, **kwargs):
     user_data = await redis_process.get_data(event_from_user.id)
@@ -22,7 +21,7 @@ async def check_new_news(dialog_manger: DialogManager, bot: Bot, event_from_user
     print(user_data)
 
     for news in new_news:
-        if news[0] not in view_user_news:
+        if news[0] not in user_data['view_user_news']:
             # [0] - article url
             # [1] - other hub in article
             # [2] - article title
@@ -37,7 +36,7 @@ async def check_new_news(dialog_manger: DialogManager, bot: Bot, event_from_user
 
             await bot.send_message(chat_id=event_from_user.id, text=text, reply_markup=news_read_keyboard)
             await asyncio.sleep(5)
-            view_user_news.append(news[0])
+            user_data['view_user_news'].append(news[0])
             await redis_process.set_data(event_from_user.id, user_data)
     print('пошел отыдхать')
     while True:
@@ -93,9 +92,8 @@ async def hub_selected(dialog_manager: DialogManager, event_from_user: User, **k
         time_dict = {'last_check_in': datetime.datetime.utcnow()}
         hub_dict[hub] = time_dict
 
-    print(f'{hub_dict}')
     user_dict[dialog_manager.event.from_user.id] = hub_dict
-    print(f'again -- {hub_dict}')
+    hub_dict['view_user_news'] = []
     await redis_process.set_data(event_from_user.id, hub_dict)
 
     # return selected subjects and hubs displayed in Russian
@@ -119,7 +117,6 @@ async def ready_for_next(callback: CallbackQuery, button: Button, dialog_manager
 
 async def go_habr_dialog(callback: CallbackQuery, button: Button, dialog_manager: DialogManager):
     await dialog_manager.start(state=state_config.HabrSG.first)
-    user_dict[callback.from_user.id] = {'h'}
 
 
 habr_dialog = Dialog(
