@@ -1,6 +1,7 @@
 from typing import Any
 from aioredis import Redis
 import pickle
+import json
 
 from config import load_config
 
@@ -16,7 +17,8 @@ async def connect_to_redis():
 
 async def set_data(user_id: int, user_dict: dict[str, Any]) -> Any:
     redis = await connect_to_redis()
-    data_dump = pickle.dumps(user_dict)
+    data_dump = json.dumps(user_dict)
+    print(user_dict)
 
     if await redis.set(user_id, data_dump):
         return True
@@ -28,5 +30,5 @@ async def get_data(user_id: int) -> Any:
     redis = await connect_to_redis()
 
     result = await redis.get(user_id)
-    result_load = pickle.loads(result)
+    result_load = json.loads(result)
     return result_load
