@@ -4,8 +4,7 @@ import sys
 from aiogram import Bot, Dispatcher
 from aiogram.filters import CommandStart
 from aiogram.types import Message, CallbackQuery
-from aiogram_dialog import Dialog, DialogManager, StartMode, Window, setup_dialogs
-from aiogram_dialog.widgets.text import Const
+from aiogram_dialog import DialogManager, StartMode, setup_dialogs
 from aiogram_dialog.widgets.kbd import Button
 
 from state import state_config
@@ -32,7 +31,8 @@ async def command_start_process(message: Message, dialog_manager: DialogManager)
 
 
 if __name__ == '__main__':
-    logging.basicConfig(level=logging.INFO, stream=sys.stdout)
+    logging.basicConfig(filename='../publisher-bot/bots.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+    # logging.basicConfig(filename='../bots.log', level=logging.INFO, stream=sys.stdout)
     dp.include_routers(habr_publisher.rt, habr_publisher.habr_dialog)
     setup_dialogs(dp)
     dp.run_polling(bot)
