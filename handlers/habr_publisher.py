@@ -13,17 +13,17 @@ from redis import redis_process
 
 rt = Router()
 
-user_dict = {}
+# user_dict = {}
 
 async def check_new_news(dialog_manger: DialogManager, bot: Bot, event_from_user: User, **kwargs):
-    # user_data = await redis_process.get_data(event_from_user.id)
-    new_news = await scraps_process.get_news(user_dict, event_from_user.id)
-    # new_news = await scraps_process.get_news(user_data, event_from_user.id)
+    user_data = await redis_process.get_data(event_from_user.id)
+    # new_news = await scraps_process.get_news(user_dict, event_from_user.id)
+    new_news = await scraps_process.get_news(user_data, event_from_user.id)
     # print(user_data)
 
     for news in new_news:
-        if news[0] not in user_dict[event_from_user.id]['view_user_news']:
-        # if news[0] not in user_data['view_user_news']:
+        # if news[0] not in user_dict[event_from_user.id]['view_user_news']:
+        if news[0] not in user_data['view_user_news']:
             # [0] - article url
             # [1] - other hub in article
             # [2] - article title
@@ -31,17 +31,17 @@ async def check_new_news(dialog_manger: DialogManager, bot: Bot, event_from_user
             # [4] - article description
 
             news_read_keyboard = InlineKeyboardMarkup(inline_keyboard=[[InlineKeyboardButton(text='Читать', callback_data='read_news', url=news[0])]])
-            # user_data[news[3]]['last_check_in'] = datetime.datetime.utcnow()
-            user_dict[event_from_user.id][news[3]]['last_check_in'] = datetime.datetime.utcnow()
+            user_data[news[3]]['last_check_in'] = datetime.datetime.utcnow()
+            # user_dict[event_from_user.id][news[3]]['last_check_in'] = datetime.datetime.utcnow()
 
             text = f'Другие хабы: {", ".join([f"{other_hub}" for other_hub in news[2]])}\n\n{news[1]}\n\n{" ".join(news[4])}'
 
             await bot.send_message(chat_id=event_from_user.id, text=text, reply_markup=news_read_keyboard)
             await asyncio.sleep(5)
 
-            # user_data['view_user_news'].append(news[0])
-            user_dict[event_from_user.id]['view_user_news'].append(news[0])
-            # await redis_process.set_data(event_from_user.id, user_data)
+            user_data['view_user_news'].append(news[0])
+            # user_dict[event_from_user.id]['view_user_news'].append(news[0])
+            await redis_process.set_data(event_from_user.id, user_data)
     print('пошел отыдхать')
     while True:
         await asyncio.sleep(3600)
@@ -97,9 +97,9 @@ async def hub_selected(dialog_manager: DialogManager, event_from_user: User, **k
         hub_dict[hub] = time_dict
 
     hub_dict['view_user_news'] = []
-    user_dict[event_from_user.id] = hub_dict
+    # user_dict[event_from_user.id] = hub_dict
     # print(hub_dict)
-    # await redis_process.set_data(event_from_user.id, hub_dict)
+    await redis_process.set_data(event_from_user.id, hub_dict)
 
     # return selected subjects and hubs displayed in Russian
     return {
