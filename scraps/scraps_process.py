@@ -51,33 +51,29 @@ def hubs_for_menu(subject_list: list):
     return subject_for_hub
 
 
-def subsite_for_menu():
-    with open('../publisher-bot/scraps/all_subsite.json', encoding='utf-8') as file:
-        source = json.load(file)
-
-    return source.get('subsites')
-
-
 async def get_news(user_storage, user_id: int):
     print(f'USER STORAGE: {user_storage}')
     new_news_list = []
 
-    hubs_keys_name = user_storage.keys()
+    # hubs_keys_name = user_storage.keys()
+    hubs_keys_name = user_storage[user_id].keys()
 
-    for key in hubs_keys_name:
+    for key in [hub_key for hub_key in hubs_keys_name if hub_key != 'view_user_news']:
         async with aiohttp.ClientSession(headers=headers) as session:
             await asyncio.sleep(5)
             async with session.get(f'https://habr.com/ru/hubs/{key}/articles/') as response:
                 response_from_site = await response.text(encoding='utf-8')
                 source = BeautifulSoup(response_from_site, 'lxml')
 
+                print(key)
                 article_block = source.find('div', class_='tm-articles-list').find_all('div', class_='tm-article-snippet tm-article-snippet')
                 for value in article_block:
                     article_data = value.find('div', class_='tm-article-snippet__meta-container').find('div',class_='tm-article-snippet__meta').find('a', class_='tm-article-datetime-published tm-article-datetime-published_link').find('time').get('datetime').replace('Z', '')
                     article_other_hub = value.find('div', class_='tm-publication-hubs__container').find('div', class_='tm-publication-hubs').find_all('span', class_='tm-publication-hub__link-container')
                     article_description = value.find('div', class_='tm-article-body tm-article-snippet__lead').find('div', class_='article-formatted-body article-formatted-body article-formatted-body_version-2')
 
-                    if datetime.datetime.strptime(article_data, "%Y-%m-%dT%H:%M:%S.%f") >= (user_storage[key]['last_check_in'] - datetime.timedelta(hours=8)):
+                    #if datetime.datetime.strptime(article_data, "%Y-%m-%dT%H:%M:%S.%f") >= (user_storage[key]['last_check_in'] - datetime.timedelta(hours=8)):
+                    if datetime.datetime.strptime(article_data, "%Y-%m-%dT%H:%M:%S.%f") >= (user_storage[user_id][key]['last_check_in'] - datetime.timedelta(hours=8)):
                         article_url = url + value.find('h2', class_='tm-title tm-title_h2').find('a', class_='tm-title__link').get('href')
                         article_title = value.find('h2', class_='tm-title tm-title_h2').find('a', class_='tm-title__link').find('span').text
                         article_other_hub = [other_hubs.find('a').find('span').text for other_hubs in article_other_hub]

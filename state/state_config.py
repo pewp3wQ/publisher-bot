@@ -9,9 +9,3 @@ class HabrSG(StatesGroup):
     first = State()
     second = State()
     third = State()
-
-
-class DtfSG(StatesGroup):
-    first = State()
-    second = State()
-    third = State()
