@@ -1,8 +1,9 @@
 import datetime
 import asyncio
+import logging
 
 from aiogram import Router, Bot
-from aiogram.types import CallbackQuery, User, InlineKeyboardButton, InlineKeyboardMarkup
+from aiogram.types import CallbackQuery, User, Message, InlineKeyboardButton, InlineKeyboardMarkup
 from aiogram_dialog import DialogManager, Dialog, Window
 from aiogram_dialog.widgets.kbd import Button, Multiselect, Group, ManagedMultiselect, Row, ScrollingGroup
 from aiogram_dialog.widgets.text import Const, Format
@@ -13,12 +14,25 @@ from redis import redis_process
 
 rt = Router()
 
+logger = logging.getLogger(__name__)
+
 # user_dict = {}
+
+
+@rt.message()
+async def other_message(message: Message, bot: Bot):
+    await bot.delete_message(chat_id=message.from_user.id, message_id=message.message_id)
+    logger.info(f'Сообщение от пользователя было удалено -- {message.text}')
+
 
 async def check_new_news(dialog_manger: DialogManager, bot: Bot, event_from_user: User, **kwargs):
     user_data = await redis_process.get_data(event_from_user.id)
+    logger.info(f'{event_from_user.id} -- {user_data}')
+
     # new_news = await scraps_process.get_news(user_dict, event_from_user.id)
     new_news = await scraps_process.get_news(user_data, event_from_user.id)
+
+    logger.info(f'{event_from_user.id} -- {new_news}')
     # print(user_data)
 
     for news in new_news:
@@ -42,7 +56,8 @@ async def check_new_news(dialog_manger: DialogManager, bot: Bot, event_from_user
             user_data['view_user_news'].append(news[0])
             # user_dict[event_from_user.id]['view_user_news'].append(news[0])
             await redis_process.set_data(event_from_user.id, user_data)
-    print('пошел отыдхать')
+    # print('пошел отыдхать')
+    logger.info('пошел отыдхать')
     while True:
         await asyncio.sleep(3600)
         await asyncio.create_task(check_new_news(dialog_manger, bot, event_from_user, **kwargs))
@@ -85,7 +100,8 @@ async def hub_selected(dialog_manager: DialogManager, event_from_user: User, **k
     for value in temp_hub_list:
         inverted_hub_dictionary[value[1]] = value[0]
 
-    print('дошел до создания задачи')
+    # print('дошел до создания задачи')
+    logger.info('дошел до создания задачи')
     asyncio.create_task(check_new_news(dialog_manager, dialog_manager.event.bot, event_from_user))
 
     hubs = dialog_manager.dialog_data.get('hubs_selection')
@@ -99,6 +115,8 @@ async def hub_selected(dialog_manager: DialogManager, event_from_user: User, **k
     hub_dict['view_user_news'] = []
     # user_dict[event_from_user.id] = hub_dict
     # print(hub_dict)
+
+    logger.info(f'HUB SELECTED FUNC -- {hub_dict}')
     await redis_process.set_data(event_from_user.id, hub_dict)
 
     # return selected subjects and hubs displayed in Russian

@@ -30,9 +30,15 @@ async def command_start_process(message: Message, dialog_manager: DialogManager)
     )
 
 
+@dp.message()
+async def other_message(message: Message, bot: Bot):
+    await bot.delete_message(chat_id=message.from_user.id, message_id=message.message_id)
+    logger = logging.getLogger(__name__)
+    logger.info(f'Сообщение от пользователя было удалено -- {message.text}')
+
+
 if __name__ == '__main__':
-    logging.basicConfig(filename='../publisher-bot/bots.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-    # logging.basicConfig(filename='../bots.log', level=logging.INFO, stream=sys.stdout)
+    logging.basicConfig(filename='../publisher-bot/bots.log', level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', encoding='utf-8')
     dp.include_routers(habr_publisher.rt, habr_publisher.habr_dialog)
     setup_dialogs(dp)
     dp.run_polling(bot)

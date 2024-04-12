@@ -3,6 +3,7 @@ import datetime
 import json
 import asyncio
 import aiohttp
+import logging
 
 from config import load_config
 
@@ -31,11 +32,14 @@ headers = {
     'x-app-version': '2.172.0',
 }
 
+logger = logging.getLogger(__name__)
+
 
 def subjects_for_menu():
     with open('../publisher-bot/scraps/all_subjects.json', 'r', encoding='utf-8') as file:
         source = json.load(file)
 
+    logger.info(source)
     return source.get('subjects')
 
 
@@ -52,10 +56,11 @@ def hubs_for_menu(subject_list: list):
 
 
 async def get_news(user_storage, user_id: int):
-    print(f'USER STORAGE: {user_storage}')
+    logger.info(user_storage)
     new_news_list = []
 
     hubs_keys_name = user_storage.keys()
+    logger.info(hubs_keys_name)
     # hubs_keys_name = user_storage[user_id].keys()
 
     for key in [hub_key for hub_key in hubs_keys_name if hub_key != 'view_user_news']:
@@ -65,14 +70,13 @@ async def get_news(user_storage, user_id: int):
                 response_from_site = await response.text(encoding='utf-8')
                 source = BeautifulSoup(response_from_site, 'lxml')
 
-                print(key)
                 article_block = source.find('div', class_='tm-articles-list').find_all('div', class_='tm-article-snippet tm-article-snippet')
                 for value in article_block:
                     article_data = value.find('div', class_='tm-article-snippet__meta-container').find('div',class_='tm-article-snippet__meta').find('a', class_='tm-article-datetime-published tm-article-datetime-published_link').find('time').get('datetime').replace('Z', '')
                     article_other_hub = value.find('div', class_='tm-publication-hubs__container').find('div', class_='tm-publication-hubs').find_all('span', class_='tm-publication-hub__link-container')
                     article_description = value.find('div', class_='tm-article-body tm-article-snippet__lead').find('div', class_='article-formatted-body article-formatted-body article-formatted-body_version-2')
 
-                    if datetime.datetime.strptime(article_data, "%Y-%m-%dT%H:%M:%S.%f") >= (user_storage[key]['last_check_in'] - datetime.timedelta(hours=8)):
+                    if datetime.datetime.strptime(article_data, "%Y-%m-%dT%H:%M:%S.%f") > (user_storage[key]['last_check_in'] - datetime.timedelta(hours=8)):
                     # if datetime.datetime.strptime(article_data, "%Y-%m-%dT%H:%M:%S.%f") >= (user_storage[user_id][key]['last_check_in'] - datetime.timedelta(hours=8)):
                         article_url = url + value.find('h2', class_='tm-title tm-title_h2').find('a', class_='tm-title__link').get('href')
                         article_title = value.find('h2', class_='tm-title tm-title_h2').find('a', class_='tm-title__link').find('span').text
@@ -80,14 +84,17 @@ async def get_news(user_storage, user_id: int):
                         try:
                             article_description = [article_description.text]
                         except AttributeError as attr:
-                            print(f'произошел {attr}')
+                            logger.info(f'произошел {attr}')
+                            # print(f'произошел {attr}')
                             article_description = ['нет описания']
 
                         new_news_list.append([article_url, article_title, article_other_hub, key, article_description])
+
+                        logger.info(new_news_list)
     return new_news_list
 
 
-async def get_subject_for_json():
+async def get_subjects_for_json():
     await asyncio.sleep(100_000)
     async with aiohttp.ClientSession(headers=headers) as session:
         async with session.get(f'{url}/ru/hubs/') as action:
