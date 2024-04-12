@@ -18,7 +18,7 @@ bot = Bot(token=bot_token)
 dp = Dispatcher()
 
 
-async def back_to_menu(callback: CallbackQuery, button: Button, dialog_manager: DialogManager):
+async def back_to_menu1(callback: CallbackQuery, button: Button, dialog_manager: DialogManager):
     await dialog_manager.done()
 
 
