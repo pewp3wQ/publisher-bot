@@ -4,3 +4,4 @@ venv
 test.py
 test1.py
 __pycache__/
+bots.log
