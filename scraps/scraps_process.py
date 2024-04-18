@@ -55,12 +55,10 @@ def hubs_for_menu(subject_list: list):
     return subject_for_hub
 
 
-async def get_news(user_storage, user_id: int):
-    logger.info(user_storage)
+async def get_news(user_storage):
     new_news_list = []
 
     hubs_keys_name = user_storage.keys()
-    logger.info(hubs_keys_name)
     # hubs_keys_name = user_storage[user_id].keys()
 
     for key in [hub_key for hub_key in hubs_keys_name if hub_key != 'view_user_news']:
@@ -85,12 +83,10 @@ async def get_news(user_storage, user_id: int):
                             article_description = [article_description.text]
                         except AttributeError as attr:
                             logger.info(f'произошел {attr}')
-                            # print(f'произошел {attr}')
                             article_description = ['нет описания']
 
                         new_news_list.append([article_url, article_title, article_other_hub, key, article_description])
 
-                        logger.info(new_news_list)
     return new_news_list
 
 
@@ -115,15 +111,15 @@ async def get_subjects_for_json():
 
 
 async def get_hubs_for_json():
-    await asyncio.sleep(100_000)
+    # await asyncio.sleep(100_000)
     last_page = 0
-    with open('../publisher-bot/scraps/all_subjects.json', 'r', encoding='utf-8') as file:
+    with open('../scraps/all_subjects.json', 'r', encoding='utf-8') as file:
         value_json = json.load(file)
 
     hubs = [hubs_data[1] for hubs_data in value_json.get('subjects')]
 
     for hub in hubs:
-        with open('../publisher-bot/scraps/hubs.html', encoding='utf-8') as file_for_page:
+        with open('../scraps/hubs.html', encoding='utf-8') as file_for_page:
             source = file_for_page.read()
 
         soup = BeautifulSoup(source, 'lxml')
@@ -144,15 +140,19 @@ async def get_hubs_for_json():
                     #     hubs_file.write(text)
 
                     soup = BeautifulSoup(text, 'lxml')
-                    hubs_info = soup.find_all('div', class_='tm-hub__info')
+                    hubs_info = soup.find_all('div', class_='tm-hubs-list__hub')
+                    # hubs_info = soup.find_all('div', class_='tm-hub__info')
 
                     for value in hubs_info:
-                        title = value.find('a').text
-                        title_url = value.find('a').get('href').rstrip('/').split('/')[-1]
-                        hub_name_list.append(title)
-                        hub_url_list.append(title_url)
+                        title = value.find('div', class_='tm-hub__info').find('a').text
+                        title_url = value.find('div', class_='tm-hub__info').find('a').get('href').rstrip('/').split('/')[-1]
+                        title_rating = value.find('div', class_='tm-hubs-list__hub-rating').get_text(strip=True)
+
+                        if float(title_rating) > 1:
+                            hub_name_list.append(title)
+                            hub_url_list.append(title_url)
                 list_zip = zip(hub_name_list, hub_url_list)
                 HUBS_NAME[hub] = list(list_zip)
 
-    with open('../publisher-bot/scraps/all_hubs.json', 'w', encoding='utf-8') as file:
+    with open('../scraps/all_hubs.json', 'w', encoding='utf-8') as file:
         json.dump(HUBS_NAME, file, indent=4, ensure_ascii=False)

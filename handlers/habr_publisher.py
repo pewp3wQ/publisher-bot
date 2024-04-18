@@ -27,20 +27,20 @@ async def other_message(message: Message, bot: Bot):
 
 async def check_new_news(dialog_manger: DialogManager, bot: Bot, event_from_user: User, **kwargs):
     user_data = await redis_process.get_data(event_from_user.id)
-    logger.info(f'{event_from_user.id} -- {user_data}')
+    logger.info(f'ПОЛУЧИЛ ДАННЫЕ ИЗ БД {event_from_user.id} -- {user_data}')
 
     # new_news = await scraps_process.get_news(user_dict, event_from_user.id)
-    new_news = await scraps_process.get_news(user_data, event_from_user.id)
+    new_news = await scraps_process.get_news(user_data)
 
-    logger.info(f'{event_from_user.id} -- {new_news}')
+    logger.info(f'ПОЛУЧИЛ НОВЫЕ НОВОСТИ {event_from_user.id} -- {new_news}')
     # print(user_data)
 
     for news in new_news:
         # if news[0] not in user_dict[event_from_user.id]['view_user_news']:
         if news[0] not in user_data['view_user_news']:
             # [0] - article url
-            # [1] - other hub in article
-            # [2] - article title
+            # [1] - article title
+            # [2] - other hub in article
             # [3] - article hub
             # [4] - article description
 
@@ -48,7 +48,7 @@ async def check_new_news(dialog_manger: DialogManager, bot: Bot, event_from_user
             user_data[news[3]]['last_check_in'] = datetime.datetime.utcnow()
             # user_dict[event_from_user.id][news[3]]['last_check_in'] = datetime.datetime.utcnow()
 
-            text = f'Другие хабы: {", ".join([f"{other_hub}" for other_hub in news[2]])}\n\n{news[1]}\n\n{" ".join(news[4])}'
+            text = f'{news[1]}\n\n{" ".join(news[4])}\n\nДругие хабы: {", ".join([f"{other_hub}" for other_hub in news[2]])}'
 
             await bot.send_message(chat_id=event_from_user.id, text=text, reply_markup=news_read_keyboard)
             await asyncio.sleep(5)
